@@ -22,7 +22,7 @@ public:
 
 	bool Initialize(HWND, unsigned int, unsigned int, float, float, bool, bool);
 
-	void BeginScene(float, float, float, float);
+	void BeginScene(float red, float green, float blue, float alpha);
 	void EndScene();
 
 	ID3D11Device* GetDevice();

@@ -199,6 +199,7 @@ bool D3DClass::Initialize(
 	featureLevel = D3D_FEATURE_LEVEL_11_0;
 
 	// Create the swap chain, Direct3D device, and Direct3D device context.
+	// The Direct3D device and Direct3D device context are very important, they are the interface to all of the Direct3D functions.
 	result = D3D11CreateDeviceAndSwapChain(NULL, D3D_DRIVER_TYPE_HARDWARE, NULL, 0, &featureLevel, 1,
 		D3D11_SDK_VERSION, &swapChainDesc, &m_swapChain, &m_device, NULL, &m_deviceContext);
 	if (FAILED(result))
@@ -246,7 +247,6 @@ bool D3DClass::Initialize(
 	{
 		return false;
 	}
-
 
 	// Initialize the description of the stencil state.
 	ZeroMemory(&depthStencilDesc, sizeof(depthStencilDesc));
@@ -299,7 +299,6 @@ bool D3DClass::Initialize(
 
 	// Bind the render target view and depth stencil buffer to the output render pipeline.
 	m_deviceContext->OMSetRenderTargets(1, &m_renderTargetView, m_depthStencilView);
-
 
 	// Setup the raster description which will determine how and what polygons will be drawn.
 	rasterDesc.AntialiasedLineEnable = false;
