@@ -2,6 +2,8 @@
 
 #include <Windows.h>
 
+#include "D3DClass.h"
+
 
 /////////////
 // GLOBALS //
@@ -29,5 +31,7 @@ private:
 	bool Render();
 
 private:
+
+	D3DClass * m_D3D;
 
 };

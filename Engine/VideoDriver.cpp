@@ -1,10 +1,12 @@
 #pragma once
 
 #include "VideoDriver.h"
+#include "MyUtilities.h"
 
 
 VideoDriver::VideoDriver()
 {
+	m_D3D = NULL;
 }
 
 
@@ -21,6 +23,11 @@ VideoDriver::~VideoDriver()
 
 bool VideoDriver::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 {
+	m_D3D = new D3DClass();
+	if (!m_D3D || !m_D3D->Initialize(hwnd, screenWidth, screenHeight, SCREEN_NEAR, SCREEN_DEPTH, FULL_SCREEN, VSYNC_ENABLED))
+	{
+		return false;
+	}
 
 	return true;
 }
@@ -28,13 +35,16 @@ bool VideoDriver::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 
 void VideoDriver::Shutdown()
 {
-
-	return;
+	SAFE_DELETE(m_D3D);
 }
 
 
 bool VideoDriver::Frame()
 {
+	if (!Render())
+	{
+		return false;
+	}
 
 	return true;
 }
@@ -42,6 +52,8 @@ bool VideoDriver::Frame()
 
 bool VideoDriver::Render()
 {
+	m_D3D->BeginScene(0.2, 0.3, 0.5, 1.0);
+	m_D3D->EndScene();
 
 	return true;
 }
