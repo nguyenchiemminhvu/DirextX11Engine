@@ -2,3 +2,5 @@
 /Debug/*
 /.vs
 /Engine/Debug/*
+Engine.VC.db
+Engine.VC.VC.opendb

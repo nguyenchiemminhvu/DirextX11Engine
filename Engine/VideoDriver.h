@@ -4,6 +4,10 @@
 
 #include "D3DClass.h"
 
+#include "Shaders.h"
+#include "Model.h"
+#include "Camera.h"
+
 
 /////////////
 // GLOBALS //
@@ -32,6 +36,11 @@ private:
 
 private:
 
-	D3DClass * m_D3D;
+	D3DClass	*m_D3D;
+
+	Shaders		*m_shaders;
+	Camera		*m_camera;
+
+	Model		*m_model;
 
 };

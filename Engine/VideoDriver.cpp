@@ -7,6 +7,10 @@
 VideoDriver::VideoDriver()
 {
 	m_D3D = NULL;
+
+	m_shaders = NULL;
+	m_camera = NULL;
+	m_model = NULL;
 }
 
 
@@ -36,6 +40,10 @@ bool VideoDriver::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 void VideoDriver::Shutdown()
 {
 	SAFE_DELETE(m_D3D);
+
+	SAFE_DELETE(m_shaders);
+	SAFE_DELETE(m_model);
+	SAFE_DELETE(m_camera);
 }
 
 
