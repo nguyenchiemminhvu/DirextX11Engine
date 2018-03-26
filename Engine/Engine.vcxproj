@@ -98,6 +98,10 @@
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Application.h" />
   </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Resources\Shaders\ColoredTriangleFS.hlsl" />
+    <FxCompile Include="Resources\Shaders\ColoredTriangleVS.hlsl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

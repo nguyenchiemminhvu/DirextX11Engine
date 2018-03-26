@@ -9,4 +9,11 @@ Shaders::Shaders()
 
 Shaders::~Shaders()
 {
+	Shutdown();
+}
+
+
+void Shaders::Shutdown()
+{
+
 }
